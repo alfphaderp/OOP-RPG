@@ -1,13 +1,15 @@
 package rpg.adventurer;
 
+// Defines the bare bones of what each adventurer should have
+// This class will change in the future as we introduce new OOP concepts
 public class Adventurer {
+	// Some basic fields or properties that each adventurer has
 	private String name;
 	private boolean isAlive;
 	private int level;
-	private double hp;
-	private double mp;
-	private double atk;
+	private double hp, mp, atk;
 	
+	// A constructor to let us easily create adventurers by providing field values via parameters
 	public Adventurer(String name, int level, double hp, double mp, double atk) {
 		this.name = name;
 		this.isAlive = true;
@@ -16,6 +18,7 @@ public class Adventurer {
 		this.atk = atk;
 	}
 	
+	// Attack another adventurer
 	public void attack(Adventurer a) {
 		System.out.println(name + " has attacked " + a.name + "!");
 		a.changeHealth(-atk);
@@ -25,10 +28,12 @@ public class Adventurer {
 		}
 	}
 	
+	// Change the health of the adventurer
 	public void changeHealth(double change) {
 		hp += change;
 	}
 
+	// Getters and setters for accessing and modifying the adventurer's properties
 	public String getName() {
 		return name;
 	}
